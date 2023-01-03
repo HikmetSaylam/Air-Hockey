@@ -30,7 +30,12 @@ public class GameManager : MonoSingleton<GameManager>
         playerOneScore.GetComponent<TextMeshProUGUI>().text = _playerTwoGoal.ToString();
         playerTwoScore.GetComponent<TextMeshProUGUI>().text = _playerOneGoal.ToString();
         CheckWinner(_playerOneGoal,_playerTwoGoal);
+    }
 
+    public void Quit()
+    {
+        SceneManager.LoadScene("StartScene");
+        Time.timeScale = 1;
     }
 
     public void Pause()
